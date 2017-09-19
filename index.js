@@ -25,10 +25,9 @@ app.get('/', (req, res, next) => {
   });
 });
 
-
 // Create HTTP server and start it
 let server = http.createServer(app);
-server.listen(7777);
+server.listen(process.env.PORT || 7777);
 server.on('listening', () => {
   console.log('Web Server', 'Started on', server.address().port);
 });
