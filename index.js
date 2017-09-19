@@ -12,10 +12,10 @@ const header = fs.readFileSync('./partials/header.html');
 const footer = fs.readFileSync('./partials/footer.html');
 
 // Handle routing
-app.get('/', (req, res, next) => {
+app.use('/', (req, res, next) => {
   request({
     method: 'get',
-    url: 'http://handverkerportalen.devz.no/'
+    url: 'http://handverkerportalen.devz.no' + req.path
   },
   (err, response, body) => {
     if(err) {
