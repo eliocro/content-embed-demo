@@ -1,39 +1,342 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html  xmlns="http://www.w3.org/1999/xhtml" prefix="" lang="nb-NO" class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <title>Frontpage | Håndverkerportalen : Forbrukerrådet</title>
+	<meta name="description" content="Håndverkerportalen">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/img/icons/favicon.ico" rel="shortcut icon">
+    <link href="https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:pages" content="179778468715139" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- BEGIN Metadata added by the Add-Meta-Tags WordPress plugin -->
 
-    <!-- Custom styles for this template -->
-    <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+<!-- END Metadata added by the Add-Meta-Tags WordPress plugin -->
+
+<link rel='dns-prefetch' href='//fbr-fil.comingsoon.no' />
+<link rel='dns-prefetch' href='//gstatic.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Forbrukerrådet &raquo; strøm" href="http://fbr.comingsoon.no/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Forbrukerrådet &raquo; kommentarstrøm" href="http://fbr.comingsoon.no/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/fbr.comingsoon.no\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='opensearchserver-style-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/opensearchserver-search/css/oss-style.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='gch-style-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/responsive-google-charts/css/google-charts.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive_table_css-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/tables-done-responsive/css/responsive_table.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='default-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/styles/css/main.css?ver=1496151262' type='text/css' media='all' />
+<link rel='stylesheet' id='awesomefont-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/fonts/font-awesome/css/font-awesome.min.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='feedback-form-css-css'  href='http://fbr.comingsoon.no/feedback-form/styles.css?ver=4.7.2' type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='ie-rules-css'  href='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/styles/css/ie.css?ver=1.0' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/js/lib/modernizr-2.7.1.min.js?ver=2.7.1'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/js/jquery.hypher.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/js/nb-no.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/feedback-form/form.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/js/fbr.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/js/jquery.unveil.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wp_sentry = {"dsn":"https:\/\/25d7206b710f4bd0874e1f78ca13e1c9@sentry.copyleft.no\/8","options":{"release":"1.0","environment":"wp01dev","tags":{"wordpress":"4.7.2","language":"nb-NO"},"user":{"id":0,"name":"anonymous"}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/wp-sentry-integration/raven/js/raven-3.13.0.min.js?ver=3.13.0'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/opensearchserver-search/js/opensearchserver.js?ver=4.7.2'></script>
+<script type='text/javascript' src='http://gstatic.com/charts/loader.js?ver=3'></script>
+<script type='text/javascript' src='https://fbr-fil.comingsoon.no/static/1.0/wp-content/plugins/responsive-google-charts/js/custom_chart.js?ver=1'></script>
+<link rel='https://api.w.org/' href='http://fbr.comingsoon.no/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fbr.comingsoon.no/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fbr.comingsoon.no/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.7.2" />
+<link rel="canonical" href="http://fbr.comingsoon.no/external-content/" />
+
+<link rel="alternate" type="application/json+oembed" href="http://fbr.comingsoon.no/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffbr.comingsoon.no%2Fexternal-content%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://fbr.comingsoon.no/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffbr.comingsoon.no%2Fexternal-content%2F&#038;format=xml" />
   </head>
+  <body class="page-template page-template-templates-in-use page-template-external_content page-template-templates-in-useexternal_content-php page page-id-13922 external-content">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+      <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="wrapper page-wrap topper fr">
+      <div class="head">
+          <header class="header clear">
+          <div class="optional_container">
+              <ul id="menu">
+                <li class="menulogo"><a href="#" class="drop"></a>
+                <div class="logo">
+                  <a href="http://fbr.comingsoon.no">
+                    <img src="https://fbr-fil.comingsoon.no/static/1.0/wp-content/themes/fr/img/forbrukerradet_logo.svg" alt="Logo" class="logo-img">
+                  </a>
+                </div>
+                </li>
+                <li class="search">
+                  <div class="search-container">
+                    <!-- search -->
+<form id="fbr-searchform" class="search" method="get" action="http://fbr.comingsoon.no" role="search">
+    <input autocomplete="off" id="fbr-keyword" name="s" type="text" value="" placeholder="SØK"/>
+    <a href="#" id="search-form-submit">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="375.045 607.885 30.959 30.33" enable-background="new 375.045 607.885 30.959 30.33" xml:space="preserve">
+            <path fill="#000000" d="M405.047,633.805l-7.007-6.542c-0.129-0.121-0.267-0.226-0.408-0.319c1.277-1.939,2.025-4.258,2.025-6.753 c0-6.796-5.51-12.306-12.307-12.306s-12.306,5.51-12.306,12.306s5.509,12.306,12.306,12.306c2.565,0,4.945-0.786,6.916-2.128 c0.122,0.172,0.257,0.337,0.418,0.488l7.006,6.542c1.122,1.048,2.783,1.093,3.709,0.101 C406.327,636.507,406.169,634.853,405.047,633.805z M387.351,629.051c-4.893,0-8.86-3.967-8.86-8.86s3.967-8.86,8.86-8.86 s8.86,3.967,8.86,8.86S392.244,629.051,387.351,629.051z"/>
+        </svg>
+    </a>
+</form>
+<!-- /search -->
+                  <div class="clear"></div>
+                </div>
+                </li>
+                <li class="menu_right menubutton">
+                <a href="#" class="drop">
+                  <div id="menu-text">MENY</div>
+                  <div class="btn-lol">
+                    <i class="fa fa-bars"></i>
+                  </div>
+                </a>
+                  <div class="dropdown_4columns align_right">
+                    <div class="dropdown-container">
+                    <div class="arrow-up"></div>
+                    <div class="col_4">
+                      <h4>Vi hjelper deg</h4>
+                      <ul>
+                        <li><a href="/forside/angrer-du-pa-et-kjop/">Angrer du p&aring; et kj&oslash;p?</a></li>
+                        <li><a href="/forside/feil-ved-vare/">Grunn til &aring; klage?</a></li>
+                        <li><a href="/klageguide/">Slik klager du</a></li>
+                        <li><a href="/forside/kontrakter/">Kontrakter</a></li>
+                        <li><a href="/forside/klagebrev/">Klagebrev</a></li>
+                        <!-- <li><a href="/forside/nytt-og-nyttig/">Nytt og nyttig</a></li> -->
+                        <li><a href="/siste-nytt/">Siste nytt</a></li>
+                      </ul>
+                    </div>
+                    <div class="col_4">
+                      <h4>V&aring;re tips og r&aring;d</h4>
+                      <ul>
+                        <li><a href="/forside/bil/">Bil</a></li>
+                        <li><a href="/forside/bolig/">Bolig</a></li>
+                        <li><a href="/forside/okonomi-og-betaling/">&Oslash;konomi og betaling</a></li>
+                        <li><a href="/forside/digitalt/">Digitalt</a></li>
+                        <li><a href="/forside/reise/">Reise</a></li>
+                        <li><a href="/forside/varer-og-tjenester/">Andre varer og tjenester</a></li>
+                      </ul>
+                    </div>
+                    <div class="col_4">
+                      <h4>Vi mener</h4>
+                      <ul>
+                        <li><a href="/forside/fpa-bolig/">Bolig</a></li>
+                        <li><a href="/forside/fpa-finans/">Finans</a></li>
+                        <li><a href="/forside/fpa-mat-produktsikkerhet-og-handel/">Handel</a></li>
+                        <li><a href="/forside/fpa-digital/">Digital</a></li>
+                        <li><a href="/forside/fpa-offentlig-og-helse/">Offentlige tjenester</a></li>
+                      </ul>
+                    </div>
+                    <div class="col_4">
+                      <h4>Dette er oss</h4>
+                      <ul>
+                        <li><a href="/forside/om-oss/">Om oss</a></li>
+                        <li><a href="/kontakt-oss/">Kontakt oss</a></li>
+                        <li><a href="/forside/jobb-hos-oss/">Jobb hos oss</a></li>
+                        <li><a href="/presse/">Presse</a></li>
+                        <li><a href="/horingssvar/">H&oslash;ringssvar</a></li>
+                      </ul>
+                    </div>
+                    <br class="desktop" style="clear:both;" />
+                    <div class="col_1">
+                    </div>
+                    <div class="col_4">
+                      <h4>Vi unders&oslash;ker</h4>
+                      <ul>
+                        <li><a href="/forside/vi-undersoker/">Tester, guider og unders&oslash;kelser?</a></li>
+                      </ul>
+                    </div>
+                    <div class="col_4 blank">
+                      <h4>&nbsp;</h4>
+                      <ul>
+                        <li></li>
+                      </ul>
+                    </div>
+                    <div class="col_4">
+                      <h4>Nyttige tjenester</h4>
+                      <ul>
+                        <li><a href="/fly/">Flyrettighetskalkulatoren</a></li>
+                        <li><a href="/merkeoversikten/">Merkeoversikten</a></li>
+                        <li><a href="/henvendelsesstatistikk/">Henvendelsesstatistikk</a></li>
+                        <li><a href="/kommunetesten/">Kommunetesten</a></li>
+                      </ul>
+                    </div>
+                    <div class="col_4">
+                      <h4>V&aring;re nettsteder</h4>
+                      <ul>
+                        <li><a href="http://www.hvakostertannlegen.no/">Hva koster tannlegen</a></li>
+                        <li><a href="http://www.finansportalen.no/">Finansportalen</a></li>
+                        <li><a href="http://www.strompris.no/nb/#/">Str&oslash;mpris</a></li>
+                        <li><a href="http://www.forbrukereuropa.no/">Forbruker Europa</a></li>
+                      </ul>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  </div>
+                </li>
+                <li class="menu_right searchbutton">
+                  <div class="btn-lol">
+                    <a href="/?s="><i class="fa fa-search"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </header>
+        </div>
+    </div>
+    <div class="push-search"></div>
+    <div class="wrapper page-wrap breader">
+    <main>
+        <!-- <div class="main-container">
+            <div class="bread">
+                <div class="breadcrumbs">
+                </div>
+            </div>
+        </div> -->
 
-  <body>
+<style type="text/css">
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Project name</h3>
-      </div>
+    /* Reset Style */
+    body {
+        margin: 0 !important;
+    }
 
-      <div class="row" style="min-height: 400px">
+    .wrapper {
+        max-width: 100% !important;
+    }
+
+    .page-wrap {
+        min-height: initial !important;
+    }
+
+    .wrapper.page-wrap.topper {
+        min-height: inherit !important;
+    }
+
+    .main {
+        padding-top: 0px !important;
+    }
+
+    #container-external-content .wrapper {
+        max-width: 1140px !important;
+        padding-left: 15px;
+        position: static;
+        display: block;
+    }
+
+    .breader {
+        max-width: 1140px !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+        body {
+            margin: 0 !important;
+        }
+
+        .footer.site-footer {
+            position: static !important;
+        }
+
+        .push {
+            height: 0px;
+        }
+    }
+
+    @media screen and (min-width: 769px) {
+        .breader {
+            min-height: 400px!important;
+        }
+    }
+
+    /* Profile Style */
+    .form .btn--big {
+        margin-bottom: -20px;
+        padding: 4px 30px;
+        font-size: 18px;
+        display: block;
+        border: 3px solid #000;
+        border-radius: 0px;
+        background: #fff;
+    }
+
+    .btn--big:hover {
+        color: #fff;
+        background: #000;
+    }
+
+    .btn--forward {
+        background-size: none;
+    }
+
+    .btn--forward {
+        background-size: auto 60%, auto;
+        border-radius: 0;
+        background-color: #d7f5f7;
+    }
+
+    #container-external-content h1,
+    #container-external-content h2,
+    #container-external-content h3 {
+        font-family: FFClanWebMedium, sans-serif !important;
+        font-size: 26px !important;
+        font-weight: normal !important;
+        color: #000000!important;
+    }
+
+    #container-external-content p {
+        font-family: FFClanWebBook, sans-serif !important;
+        font-size: 16px !important;
+        font-weight: normal !important;
+        color: #000000!important;
+    }
+
+     #container-external-content label {
+        color: #000 !important;
+    }
+
+     #container-external-content .wizard-actions .btn {
+        border: 3px solid #000 !important;
+        border-radius: 0px !important;
+        background-color: #fff !important;
+    }
+
+
+    footer.site-footer {
+      position : relative !important;
+    }
+
+</style>
+
+<div id="handverkerportalen" class="main contentfield">
+    <div id="container-external-content" class="clearfix clear">
+        <!-- Implementation code goes here -->
+
+    <div class="main">
+        <div class="wrapper">
